@@ -6,9 +6,19 @@
     "Kristen": "",
     "Data": {
         "Bob": {
-            "Age": "sdfs",
-            "Gender": "sadas",
-            "Profession": "dsf"
+            "Age": "13",
+            "Gender": "Male",
+            "Profession": "Student"
+        },
+        "Samantha": {
+            "Age": "46",
+            "Gender": "Female",
+            "Profession": "Teacher"
+        },
+        "Carl": {
+            "Age": "68",
+            "Gender": "Male",
+            "Profession": "Weapons Engineer"
         }
     },
     "Astrella": "Outdated"
