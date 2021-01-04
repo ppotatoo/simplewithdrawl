@@ -7,7 +7,7 @@ def wipe():
 with open("data.json", "r") as f:
         data = json.load(f)
 
-infolist = ['Age', 'Gender', 'Profession']
+infolist = ['Age', 'Gender', 'Profession', 'All']
 
 def start():
     choice = input('Select your choice. Type \'1\' for Reading, and \'2\' for Editing. \n')
