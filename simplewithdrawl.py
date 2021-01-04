@@ -64,7 +64,7 @@ def startover():
     if startchoice == 'Yes':
         start()
     if startchoice == 'No':
-        return
+        print('Bye. Hope you enjoyed.')
     else:
         print('You did not enter any of the choices you poophead. I\'m not going to be kind now. You have to restart the code.')
 
