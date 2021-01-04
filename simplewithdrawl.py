@@ -1,4 +1,8 @@
 import json
+import os
+
+def wipe():
+    os.system("cls")
 
 with open("data.json", "r") as f:
         data = json.load(f)
@@ -8,6 +12,7 @@ def start():
     if choice == '1':
         name = input('Select a person to read information from. \n')
         if name not in data['Data']:
+            wipe()
             print('It looks like you did not enter a valid name. Please try again.')
             startover()
         else:
@@ -22,11 +27,13 @@ def start():
             if info == 'All':
                 print(data['Data'][name])
             else:
+                wipe()
                 print('It looks like you did not select one of the available categories.' )
                 startover()
     if choice == '2':
         name = input('Select a person to edit: \n')
         if name not in data['Data']:
+            wipe()
             print('It looks like you did not enter a valid name. Please try again.')
             startover()
         else:
@@ -45,7 +52,8 @@ def start():
                     data['Data'][name][info] = input(f'What would you like to set {name}\'s profession to? \n')
                     json.dump(data, f, indent=4)
                     print(f'Set {name}\'s profession to '+data['Data'][name][info])
-                if info != 'Age' or info != 'Gender' or info != 'Profession':
+                else:
+                    wipe()
                     print('It looks like you did not select a valid category. Try again.')
                     json.dump(data, f, indent=4)
     startover()
