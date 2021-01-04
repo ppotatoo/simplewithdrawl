@@ -7,10 +7,13 @@ def wipe():
 with open("data.json", "r") as f:
         data = json.load(f)
 
+infolist = ['Age', 'Gender', 'Profession']
+
 def start():
     choice = input('Select your choice. Type \'1\' for Reading, and \'2\' for Editing. \n')
     if choice == '1':
         name = input('Select a person to read information from. \n')
+        name = name.capitalize()
         if name not in data['Data']:
             wipe()
             print('It looks like you did not enter a valid name. Please try again.')
@@ -26,12 +29,13 @@ def start():
                 print(f'{name}\'s profession is set to '+data['Data'][name][info])
             if info == 'All':
                 print(data['Data'][name])
-            else:
+            if info not in infolist:
                 wipe()
                 print('It looks like you did not select one of the available categories.' )
                 startover()
     if choice == '2':
         name = input('Select a person to edit: \n')
+        name = name.capitalize()
         if name not in data['Data']:
             wipe()
             print('It looks like you did not enter a valid name. Please try again.')
@@ -40,6 +44,7 @@ def start():
             with open("data.json", "w") as f:
                 info = input(f'What information would you like to edit from {name}? You may choose \'Age\', \'Gender\', or \'Profession\'. \n')
                 info = info.capitalize()
+                
                 if info == 'Age':
                     data['Data'][name][info] = input(f'What would you like to set {name}\'s age to? \n')
                     json.dump(data, f, indent=4)
@@ -52,7 +57,7 @@ def start():
                     data['Data'][name][info] = input(f'What would you like to set {name}\'s profession to? \n')
                     json.dump(data, f, indent=4)
                     print(f'Set {name}\'s profession to '+data['Data'][name][info])
-                else:
+                if info not in infolist:
                     wipe()
                     print('It looks like you did not select a valid category. Try again.')
                     json.dump(data, f, indent=4)
@@ -69,4 +74,3 @@ def startover():
         print('You did not enter any of the choices you poophead. I\'m not going to be kind now. You have to restart the code.')
 
 start()
-
