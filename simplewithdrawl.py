@@ -5,12 +5,13 @@ import pprint
 def wipe():
     os.system("cls")
 
-with open("data.json", "r") as f:
-        data = json.load(f)
+
 
 infolist = ['Age', 'Gender', 'Profession', 'All']
 
 def start():
+    with open("data.json", "r") as f:
+        data = json.load(f)
     choice = input('Select your choice. Type \'1\' for Reading, and \'2\' for Editing. \n')
     if choice == '1':
         name = input('Select a person to read information from. \n')
