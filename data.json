@@ -1,9 +1,4 @@
 {
-    "Bob": "14",
-    "Garsh": "Empty",
-    "Ryan": "ever11",
-    "Bixby": "being bad",
-    "Kristen": "",
     "Data": {
         "Bob": {
             "Age": "74",
@@ -19,7 +14,16 @@
             "Age": "68",
             "Gender": "Male",
             "Profession": "Weapons Engineer"
+        },
+        "Gilbert": {
+            "Age": "69",
+            "Gender": "Male",
+            "Profession": "Professor of Particle Science"
+        },
+        "John": {
+            "Age": "2",
+            "Gender": "Male",
+            "Profession": "Causing trouble for his parents"
         }
-    },
-    "Astrella": "Outdated"
+    }
 }
