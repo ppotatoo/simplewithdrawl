@@ -1,5 +1,6 @@
 import json
 import os
+import pprint
 
 def wipe():
     os.system("cls")
@@ -28,7 +29,7 @@ def start():
             if info == 'Profession':
                 print(f'{name}\'s profession is set to '+data['Data'][name][info])
             if info == 'All':
-                print(data['Data'][name])
+                pprint.pprint(data['Data'][name])
             if info not in infolist:
                 wipe()
                 print('It looks like you did not select one of the available categories.' )
